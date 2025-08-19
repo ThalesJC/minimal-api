@@ -1,6 +1,14 @@
+using Microsoft.EntityFrameworkCore;
 using MinimalApi.Domain.Dtos;
+using MinimalApi.Infrastructure.DB;
 
 var builder = WebApplication.CreateBuilder(args);
+var stringConection = builder.Configuration.GetConnectionString("mySql");
+
+builder.Services.AddDbContext<DBContext>(options =>
+{
+    options.UseMySql(stringConection, ServerVersion.AutoDetect(stringConection));
+});
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
