@@ -1,0 +1,66 @@
+# Ignorar build outputs dentro de API e test
+/API/bin/
+/API/obj/
+/test/bin/
+/test/obj/
+
+
+# Outros outputs comuns
+[Bb]uild/
+[Ll]og/
+/[Dd]ebug/
+/[Rr]elease/
+/x64/
+/x86/
+/[Ww]in32/
+/[Aa][Rr][Mm]/
+/[Aa][Rr][Mm]64/
+
+# Arquivos do Visual Studio / Rider / VSCode
+.vscode/
+.idea/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Arquivos de publicação
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Pacotes
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Logs e cache
+*.log
+*.tlog
+*.cache
+*.tmp
+
+# Configurações sensíveis
+appsettings.*.json
+!appsettings.json     # mantém apenas o appsettings base
+
+# Testes
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Ferramentas locais
+_ReSharper*/
+*.DotSettings.user
+
+# Backup e arquivos temporários
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Outros
+.env
