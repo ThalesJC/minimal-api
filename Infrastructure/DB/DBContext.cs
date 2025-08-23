@@ -9,11 +9,12 @@ class DBContext(IConfiguration configurationAppSettings) : DbContext
   private readonly IConfiguration _configurationAppSettings = configurationAppSettings;
 
   public DbSet<Admin> Administrators { get; set; } = default!;
+  public DbSet<Vehicle> Vehicles { get; set; } = default!;
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     modelBuilder.Entity<Admin>().HasData(
-      new Admin { Email = "admi@email.com.br", Password="S3nh@ F0rt&", Role="admin"}
+      new Admin { Id = 1, Email = "admi@email.com.br", Password = "S3nh@ F0rt&", Role = "admin" }
     );
   }
 
@@ -21,7 +22,7 @@ class DBContext(IConfiguration configurationAppSettings) : DbContext
   {
     if (!optionsBuilder.IsConfigured)
     {
-      var stringConection = _configurationAppSettings.GetConnectionString("mySql")?.ToString();
+      var stringConection = _configurationAppSettings.GetConnectionString("MySql")?.ToString();
       if (!string.IsNullOrEmpty(stringConection))
         optionsBuilder.UseMySql(stringConection, ServerVersion.AutoDetect(stringConection));
 
